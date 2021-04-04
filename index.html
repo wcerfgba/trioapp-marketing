@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --blue-trans: #47f7ff99;
+        --green-trans: #47ffb499;
+        --indigo-trans: #47a2ff99;
+
+        --green-light: #8affcf;
+        --green-dark: #1fe195;
+        --gray: #ddd;
+
+        --z-card-bg: 0;
+        --z-card-content: 1;
+      }
+
+      html {
+        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
+        background: #fefefe;
+        color: #111;
+      }
+
+      h1, h2, h3, h4, h5, h6, p {
+        margin-top: 0;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .container {
+        max-width: 768px;
+        margin: 1rem auto;
+        padding: 0 1rem;
+      }
+
+      .head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .head h1, .head .tagline {
+        margin: 0;
+      }
+
+      .card {
+        border-radius: 1em;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 1rem;
+      }
+
+      .card__bg {
+        background: linear-gradient(70deg, var(--blue-trans) 0%, #ffffff00 70%);
+        position: absolute;
+        z-index: var(--z-card-bg);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .card__bg::before {
+        content: '';
+        background: linear-gradient(190deg, var(--green-trans) 0%, #ffffff00 70%);
+        position: absolute;
+        z-index: var(--z-card-bg);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .card__bg::after {
+        content: '';
+        background: linear-gradient(320deg, var(--indigo-trans) 0%, #ffffff00 70%);
+        position: absolute;
+        z-index: var(--z-card-bg);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .card__content {
+        position: relative;
+        z-index: var(--z-card-content);
+        margin: 1rem;
+      }
+
+      .card--full-width {
+        width: 100;
+        border-radius: 0;
+      }
+
+      .img {
+        margin-bottom: 1rem;
+      }
+
+      .img img {
+        width: 100%;
+        max-width: 256px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .revue-form-group {
+        margin-bottom: 0.5rem;
+      }
+
+      .revue-form-group #member_email {
+        border-radius: 1rem;
+        border: 2px solid var(--gray);
+        padding: 0.2rem 0.7rem;
+        max-width: 100%;
+      }
+
+      .revue-form-actions input[type="submit"] {
+        background: var(--green-light);
+        border-radius: 1rem;
+        border: 2px solid var(--green-dark);
+        line-height: 1rem;
+        padding: 0.2rem 1.1rem;
+      }
+
+      .footer {
+        margin: 0;
+        text-align: center;
+        font-size: 0.8rem;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      @media screen and (min-width: 576px) {
+        .card__content {
+          display: flex;
+          flex-direction: row;
+          margin: 2rem;
+        }
+
+        .card__content > * {
+          flex: 1;
+        }
+
+        .card:nth-child(2n-1) > .card__content {
+          flex-direction: row-reverse;
+        }
+
+        .img {
+          margin-bottom: 0;
+        }
+
+        #revue-form {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+
+        .revue-form-group {
+          margin-right: 0.5rem;
+          margin-bottom: 0;
+        }
+      }
+
+      .v-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .m-0 { margin: 0; }
+      .my-4 {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+      }
+      .my-8 {
+        margin-top: 8rem;
+        margin-bottom: 8rem;
+      }
+      .my-1\/2 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .text-align-center { text-align: center; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head my-4">
+        <div class="">
+          <svg width="128" height="128" class="logo">
+            <image class="logo" xlink:href="/assets/logo.svg" alt="Trio logo" width="128" height="128"></image>
+          </svg>
+        </div>
+        <h1>Trio</h1>
+        <p class="tagline">Because three's company</p>
+      </div>
+      <div class="card my-4">
+        <div class="card__content">
+          <div class="img">
+            <img src="/assets/power.png" alt="">
+          </div>
+          <div class="v-center">
+            <h2>The power of three</h2>
+            <p>Video calls lack the subtle body language which makes in-person group experiences effortless. Trio limits call to three people at a time to make it easier to communicate in a natural and fluid way.</p>
+          </div>
+        </div>
+        <div class="card__bg"></div>
+      </div>
+      <div class="card my-4">
+        <div class="card__content">
+          <div class="img">
+            <img src="/assets/buddy.png" alt="">
+          </div>
+          <div class="v-center">
+            <h2>Everyone's here</h2>
+            <p>See who's online in your Buddy List and see who's talking to who. Ask to join a trio with an empty space and start talking with your friends.</p>
+          </div>
+        </div>
+        <div class="card__bg"></div>
+      </div>
+      <div class="card my-4">
+        <div class="card__content">
+          <div class="img">
+            <img src="/assets/breakout.png" alt="">
+          </div>
+          <div class="v-center">
+            <h2>Instant breakouts</h2>
+            <p>If someone's trio is full or you just want a 1:1 chat, you can ask them to breakout and start a new trio with you.</p>
+          </div>
+        </div>
+        <div class="card__bg"></div>
+      </div>
+      <div class="card my-4">
+        <div class="card__content">
+          <div class="img">
+            <img src="/assets/swap.png" alt="">
+          </div>
+          <div class="v-center">
+            <h2>Change places!</h2>
+            <p>Mix up your trios by swapping places with someone else. Perfect for virtual parties and events, now it's easy to hop around and spend time with everyone, and get you friends talking to each other.</p>
+          </div>
+        </div>
+        <div class="card__bg"></div>
+      </div>
+    </div>
+    <div class="card card--full-width my-8">
+      <div class="container">
+        <div class="card__content">
+          <div class="v-center text-align-center">
+            <h2>Interested?</h2>
+            <p>Join our mailing list for exclusive pre-launch access</p>
+            <div id="revue-embed">
+              <form action="https://www.getrevue.co/profile/trioapp/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank">
+              <div class="revue-form-group">
+                <input class="revue-form-field" placeholder="Email" type="email" name="member[email]" id="member_email">
+              </div>
+              <div class="revue-form-actions">
+                <input type="submit" value="Subscribe" name="member[subscribe]" id="member_submit">
+              </div>
+              <!-- <div class="revue-form-footer">By subscribing, you agree with Revue’s <a target="_blank" href="https://www.getrevue.co/terms">Terms</a> and <a target="_blank" href="https://www.getrevue.co/privacy">Privacy Policy</a>.</div> -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card__bg"></div>
+    </div>
+    <div class="card card--full-width footer">
+      <div class="container my-1/2">
+        <div class="card__content my-1/2">
+          <p class="m-0">Made with ❤️ by John</p>
+        </div>
+      </div>
+      <div class="card__bg"></div>
+    </div>
+  </body>
+</html>
